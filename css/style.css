@@ -1,0 +1,293 @@
+/* ========== ESTILOS GERAIS ========== */
+
+/* Fonte principal e fundo animado */
+body {
+    font-family: "Inter", sans-serif;
+    background-image: url(../img/floresta_magica.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:initial;/* fixo */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho com espaçamento */
+header {
+    padding-top: 40px;
+    padding-left: 40px;
+    display: flex;
+    margin: 0;
+}
+
+/* Logo com efeito de zoom no hover */
+.logo-mago {
+    transition: transform 0.5s ease;
+}
+
+.logo-mago:hover {
+    height: 48px;
+    margin-right: 100px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Container central com limite de largura e centralizado */
+.container {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* ========== SEÇÃO ESQUERDA (formulário) ========== */
+
+.esquerda {
+    width: 60%;
+    height: 100%;
+    padding-top: 40px;
+}
+
+/* Formulário com organização vertical */
+form {
+    padding-top: 60px;
+    padding-left: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 148px);
+}
+
+/* Textarea com estilo limpo e responsivo */
+form textarea {
+    width: 100%;
+    border: none;
+    font-family: "Inter", sans-serif;
+    outline: none;
+    color: #05101d;
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+/* Placeholder estilizado */
+form textarea::placeholder {
+    color: #303233;
+}
+
+/* Área de alerta com ícone */
+.alerta {
+    font-size: 12px;
+    color: #485057;
+    opacity: 0.8;
+    margin: 0 0 16px 8px;
+}
+
+.alerta img {
+    margin-bottom: -4px;
+}
+
+/* Área dos botões */
+.botoes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilo base para todos os botões */
+button {
+    width: 328px;
+    height: 67px;
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid #37710a;
+    border-radius: 24px;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botão de criptografar */
+.bt-cripto {
+    background-color: #91600b;
+    color: #FFFFFF;
+}
+
+/* Botão de descriptografar */
+.bt-descripto {
+    background-color: #D8DFE8;
+    color: #151101;
+}
+
+/* Efeito hover para todos os botões */
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* ========== SEÇÃO DIREITA (resultado) ========== */
+
+.direita {
+    width: 40%;
+    height: 600px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.52);
+    border-radius: 32px;
+    margin-left: 98px;
+    margin-top: 10px;
+    padding-left: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* Conteúdo de texto criptografado */
+.texto-criptografado {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Parágrafo do texto criptografado */
+.texto-criptografado p {
+    padding-top: 25px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 150%;
+    text-align: left;
+    color: #1e1e1e;
+    /* Melhor contraste */
+    overflow: auto;
+}
+
+/* Botão de copiar com transição */
+.bt-copiar {
+    width: 300px;
+    margin-top: 30px;
+    background-color: #D8DFE8;
+    color: #343A40;
+    align-self: center;
+    
+}
+
+/* Feedback visual ao copiar texto */
+.aviso-copiado {
+    color: green;
+    font-size: 14px;
+    margin-left: 12px;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+/* Mensagem padrão sem retorno */
+.sem-retorno img {
+    margin: 100px 32px 0 32px;
+}
+
+.titulo-sem-retorno {
+    font-weight: 690;
+    font-size: 24px;
+    color: #343A40;
+    margin: 32px 32px 32px 16px;
+}
+
+.sem-retorno p {
+    font-size: 16px;
+    line-height: 150%;
+    color: #485057;
+}
+
+/* Oculta elementos visuais */
+.d-none {
+    display: none;
+    pointer-events: none;
+}
+
+/* ========== RODAPÉ ========== */
+
+footer {
+    width: 100%;
+    text-align: center;
+    background: #91600b;
+    padding: 10px 0;
+    color: #e5e5e5;
+}
+
+footer .copyright {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ========== RESPONSIVO (mobile) ========== */
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .esquerda,
+    .direita {
+        width: 100%;
+        margin: auto;
+        height: auto;
+        padding: auto;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form textarea {
+        margin-top: 20px;
+        height: 300px !important;
+        resize: none;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .bt-copiar {
+        width: 100%;
+    }
+
+    .direita {
+        height: auto;
+        min-height: 300px;
+        margin-top: 20px;
+        padding: auto;
+    }
+
+    .texto-criptografado p {
+        padding-left: 10px;
+    }
+
+    footer {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

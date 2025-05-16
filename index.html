@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Define a largura da viewport para o dispositivo e a escala inicial -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decodificador de Texto</title>
+
+    <!-- Fonte Inter do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- Cabeçalho com logotipo -->
+    <header>
+        <img class="logo-mago" src="img/favicon-32x32.png" alt="Logotipo Mago com bola de energia" />
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+        <!-- Seção esquerda: área de entrada de texto e botões -->
+        <section class="esquerda">
+            <form>
+                <!-- Área de texto para entrada do usuário -->
+                <textarea id="texto-principal" placeholder="Digite seu texto"
+                    aria-label="Área de texto para digitar o conteúdo a ser criptografado ou descriptografado"></textarea>
+
+                <!-- Aviso sobre restrições de entrada -->
+                <div class="alerta">
+                    <img src="img/alerta.svg" alt="Ícone de alerta" />
+                    <span></span>
+                </div>
+
+                <!-- Botões de ação -->
+                <div class="botoes">
+                    <button type="button" class="bt-cripto" id="criptografar">Criptografar</button>
+                    <button type="button" class="bt-descripto" id="descriptografar">Descriptografar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Seção direita: área de exibição do resultado -->
+        <section class="direita">
+            <!-- Mensagem padrão quando não há resultado -->
+            <div class="sem-retorno">
+                <img src="img/mago_sem_fundo.png" id="mensagem-nao-encontrada" alt="Nenhuma mensagem encontrada" />
+                <h3 class="titulo-sem-retorno">Nenhuma mensagem encontrada</h3>
+                <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+            </div>
+
+            <!-- Área que exibe o texto criptografado/descriptografado -->
+            <div class="texto-criptografado d-none">
+                <p></p>
+                <button class="bt-copiar" id="copiar">Copiar</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p class="copyright">
+            &copy; Desenvolvido por Luiz Costa | 2025
+        </p>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
